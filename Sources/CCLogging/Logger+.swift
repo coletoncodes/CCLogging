@@ -40,7 +40,7 @@ extension Logger {
     
 }
 
-extension OSLogType {
+public extension OSLogType {
     var emoji: String {
         switch self {
         case .debug:
