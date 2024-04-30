@@ -9,12 +9,27 @@ import Foundation
 import OSLog
 
 /// Represents the data in a "log".
-/// Mapped to a ``CoreDataLog``.
-struct CCLog {
-    let message: String
-    let osLogType: OSLogType
-    let category: CCLogCategory
-    let function: String
-    let line: Int
-    let file: String
+public struct CCLog {
+    public let message: String
+    public let osLogType: OSLogType
+    public let category: CCLogCategory
+    public let function: String
+    public let line: Int
+    public let file: String
+    
+    public init(
+        message: String,
+        osLogType: OSLogType,
+        category: CCLogCategory,
+        function: String,
+        line: Int,
+        file: String
+    ) {
+        self.message = message
+        self.osLogType = osLogType
+        self.category = category
+        self.function = function
+        self.line = line
+        self.file = file
+    }
 }
