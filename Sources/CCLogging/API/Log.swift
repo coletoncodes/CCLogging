@@ -9,12 +9,12 @@ import Foundation
 import OSLog
 
 /// The global logging function used in this module.
-/// Copy this function almost exactly in host app's to simplify
-/// logging across the app.
+/// Copy this function almost exactly in the host app to simplify
+/// logging across the app and avoid importing this package everywhere.
 public func log(
     _ message: String,
     _ osLogType: OSLogType = .debug,
-    _ category: CCLogCategory,
+    _ category: LogCategory,
     function: String = #function,
     line: Int = #line,
     file: String = #file
