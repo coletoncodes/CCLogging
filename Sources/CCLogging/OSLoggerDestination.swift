@@ -22,7 +22,7 @@ class OSLogDestination: CCLoggerDestination {
     func log(
         _ message: String,
         _ osLogType: OSLogType,
-        _ category: CCLogCategory,
+        _ category: LogCategory,
         function: String,
         line: Int,
         file: String

@@ -12,7 +12,7 @@ import OSLog
 public struct CCLog {
     public let message: String
     public let osLogType: OSLogType
-    public let category: CCLogCategory
+    public let category: LogCategory
     public let function: String
     public let line: Int
     public let file: String
@@ -20,7 +20,7 @@ public struct CCLog {
     public init(
         message: String,
         osLogType: OSLogType,
-        category: CCLogCategory,
+        category: LogCategory,
         function: String,
         line: Int,
         file: String

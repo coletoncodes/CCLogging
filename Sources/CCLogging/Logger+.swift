@@ -13,7 +13,7 @@ extension Logger {
     func log(
         _ message: String,
         _ osLogType: OSLogType = .debug,
-        _ category: CCLogCategory,
+        _ category: LogCategory,
         function: String = #function,
         line: Int = #line,
         file: String = #file
@@ -21,7 +21,7 @@ extension Logger {
         let fileInfo = file.components(separatedBy: "/").last ?? "Unparsable file"
         let logInfo = "File: \(fileInfo) | Function: \(function) at line: \(line)"
         let emoji = "[\(osLogType.emoji)] -- \(osLogType.rawDescription) | "
-        let logMessage = "\(emoji)\(category.rawValue) | Message: \(message)"
+        let logMessage = "\(emoji)\(category.formattedValue) | Message: \(message)"
         let logStr = "\(logMessage) | \(logInfo)"
         
         switch osLogType {
@@ -38,36 +38,4 @@ extension Logger {
         }
     }
     
-}
-
-public extension OSLogType {
-    var emoji: String {
-        switch self {
-        case .debug:
-            return "🐛"
-        case .info:
-            return "ℹ️"
-        case .error:
-            return "❌"
-        case .fault:
-            return "💥"
-        default:
-            return "🤖"
-        }
-    }
-    
-    var rawDescription: String {
-        switch self {
-        case .debug:
-            return "Debug"
-        case .info:
-            return "Info"
-        case .error:
-            return "Error"
-        case .fault:
-            return "Fault"
-        default:
-            return "Default"
-        }
-    }
 }

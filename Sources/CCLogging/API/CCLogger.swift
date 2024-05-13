@@ -28,7 +28,7 @@ public final class CCLogger {
     public func log(
         _ message: String,
         _ osLogType: OSLogType = .debug,
-        _ category: CCLogCategory,
+        _ category: LogCategory,
         function: String,
         line: Int,
         file: String
